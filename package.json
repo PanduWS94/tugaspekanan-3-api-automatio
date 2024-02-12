@@ -1,15 +1,21 @@
 {
-  "name": "belajar",
+  "name": "cobamochachai",
   "version": "1.0.0",
-  "description": "belajarqa",
-  "main": "index.js",
+  "description": "test chai",
+  "main": "app.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Pandu",
+  "author": "pandu",
   "license": "ISC",
   "dependencies": {
-    "prompt-sync": "^4.2.0",
+    "chai": "^5.0.3",
+    "express": "^4.18.2",
+    "jsonschema": "^1.4.1",
     "supertest": "^6.3.4"
+  },
+  "devDependencies": {
+    "mocha": "^10.3.0"
   }
 }
