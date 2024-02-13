@@ -10,12 +10,11 @@ const response = await request.get('/users')
                               .set('Authorization', `Bearer ${accessToken}`);
 
 describe('API Get User Tests', () => {
-  it('TC-007_harus berhasil mendapatkan list user dan mendapat response 200', async () => {
+  it('TC-004_harus berhasil mendapatkan list user dan mendapat response 200', async () => {
     expect(response.status).to.equal(200);
   }).timeout(2000);
 
-  it('TC-008_harus berhasil mendapatkan response "success"', async () => {
+  it('TC-005_harus berhasil mendapatkan response "success"', async () => {
   expect(response.text).to.include('success');
   }).timeout(2000);
 });
-

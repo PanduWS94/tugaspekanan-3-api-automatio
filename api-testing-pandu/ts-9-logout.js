@@ -9,7 +9,7 @@ const accessToken = loginResponse.data.accessToken;
 const refreshToken = loginResponse.data.refreshToken;
 
 describe('API Logout Tests', () => {
-  it('TC-013_harus berhasil logout dan mendapat response 200', async () => {
+  it('TC-010_harus berhasil logout dan mendapat response 200', async () => {
     const refreshData = {
         "refreshToken": refreshToken
      };
@@ -21,4 +21,3 @@ describe('API Logout Tests', () => {
     expect(response.text).to.include('success');
   }).timeout(2000);
 });
-

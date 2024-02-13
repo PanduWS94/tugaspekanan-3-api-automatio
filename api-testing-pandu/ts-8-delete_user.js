@@ -10,7 +10,7 @@ const user = JSON.parse(fs.readFileSync('../tugaspekanan-3-api-automation/Enviro
 const userId = user.data.userId;
 
 describe('API Delete User Tests', () => {
-  it('TC-011_harus berhasil delete user dan mendapat response 200', async () => {
+  it('TC-009_harus berhasil delete user dan mendapat response 200', async () => {
     const response = await request.del(`/users/${userId}`)
                                   .set('Authorization', `Bearer ${accessToken}`);
 
@@ -18,4 +18,3 @@ describe('API Delete User Tests', () => {
     expect(response.text).to.include('success');
   }).timeout(2000);
 });
-

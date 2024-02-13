@@ -13,13 +13,12 @@ const response = await request.post('/authentications')
                               .send(loginCredentials);
                               
 describe('API Login Tests', () => {
-  it('TC-004_harus berhasil login dan mengembalikan respon kode 201', async () => {
+  it('TC-001_harus berhasil login dan mengembalikan respon kode 201', async () => {
     expect(response.status).to.equal(201);
     fs.writeFileSync('../tugaspekanan-3-api-automation/Environment/responselogin.json', JSON.stringify(response.body));
   }).timeout(2000);
 
-  it('TC-005_harus ada redaksi "Authentication berhasil ditambahkan" pada text response', async () => {
+  it('TC-002_harus ada redaksi "Authentication berhasil ditambahkan" pada text response', async () => {
     expect(response.text).to.include('Authentication berhasil ditambahkan');
   }).timeout(2000);
 });
-

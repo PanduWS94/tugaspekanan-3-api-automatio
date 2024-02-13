@@ -8,7 +8,7 @@ const loginResponse = JSON.parse(fs.readFileSync('../tugaspekanan-3-api-automati
 const accessToken = loginResponse.data.accessToken;
 
 describe('API Create User Tests', () => {
-  it('TC-006_harus berhasil create user baru, mengembalikan respon kode 201 dan mendapat pesan "User berhasil ditambahkan" ', async () => {
+  it('TC-003_harus berhasil create user baru, mengembalikan respon kode 201 dan mendapat pesan "User berhasil ditambahkan" ', async () => {
     const newUser = {
       "name": "Pandu",
       "email": "panduws345@gmail.com",
@@ -23,4 +23,3 @@ describe('API Create User Tests', () => {
     fs.writeFileSync('../tugaspekanan-3-api-automation/Environment/userid.json', JSON.stringify(response.body));
   }).timeout(2000);
 });
-

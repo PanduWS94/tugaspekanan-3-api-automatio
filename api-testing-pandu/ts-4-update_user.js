@@ -10,7 +10,7 @@ const user = JSON.parse(fs.readFileSync('../tugaspekanan-3-api-automation/Enviro
 const userId = user.data.userId;
 
 describe('API Update User Tests', () => {
-  it('TC-009_harus berhasil update user dan mendapat response 200', async () => {
+  it('TC-006_harus berhasil update user menjadi "Pandu-update" dan mendapat response 200', async () => {
     const updateUser = {
       "name": "Pandu-update",
       "email": "panduws345@gmail.com"
@@ -19,9 +19,7 @@ describe('API Update User Tests', () => {
                                   .set('Authorization', `Bearer ${accessToken}`)
                                   .send(updateUser);
 
-    // Pastikan respons adalah 200 OK dan mencakup kata 'success'
     expect(response.status).to.equal(200);
-    expect(response.text).to.include('success');
+    expect(response.text).to.include('Pandu-update');
   }).timeout(2000);
 });
-
