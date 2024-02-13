@@ -1,0 +1,411 @@
+{
+  "stats": {
+    "suites": 8,
+    "tests": 10,
+    "passes": 10,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-02-13T11:30:56.976Z",
+    "end": "2024-02-13T11:30:58.235Z",
+    "duration": 1259,
+    "testsRegistered": 10,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "663f43a0-0b18-4939-b1b9-a40022c934c1",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "bb8561e9-f323-4cc2-bb7b-50dcf0ec471c",
+          "title": "API Login Tests",
+          "fullFile": "C:\\Pandu\\Bootcamp QA Automation - Sanbercode\\tugaspekanan-3-api-automation\\api-testing-pandu\\ts-2-login.js",
+          "file": "\\api-testing-pandu\\ts-2-login.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-004_harus berhasil login dan mengembalikan respon kode 201",
+              "fullTitle": "API Login Tests TC-004_harus berhasil login dan mengembalikan respon kode 201",
+              "timedOut": false,
+              "duration": 1,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "expect(response.status).to.equal(201);\nfs.writeFileSync('../tugaspekanan-3-api-automation/Environment/responselogin.json', JSON.stringify(response.body));",
+              "err": {},
+              "uuid": "4283bb59-5a84-48d3-ad4c-af9ae4bd27dc",
+              "parentUUID": "bb8561e9-f323-4cc2-bb7b-50dcf0ec471c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-005_harus ada redaksi \"Authentication berhasil ditambahkan\" pada text response",
+              "fullTitle": "API Login Tests TC-005_harus ada redaksi \"Authentication berhasil ditambahkan\" pada text response",
+              "timedOut": false,
+              "duration": 1,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "expect(response.text).to.include('Authentication berhasil ditambahkan');",
+              "err": {},
+              "uuid": "6f1b0f34-59f6-4153-854b-f91516b99390",
+              "parentUUID": "bb8561e9-f323-4cc2-bb7b-50dcf0ec471c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4283bb59-5a84-48d3-ad4c-af9ae4bd27dc",
+            "6f1b0f34-59f6-4153-854b-f91516b99390"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "0020c095-4e15-4d30-8d76-9e2d0769ab38",
+          "title": "API Create User Tests",
+          "fullFile": "C:\\Pandu\\Bootcamp QA Automation - Sanbercode\\tugaspekanan-3-api-automation\\api-testing-pandu\\ts-3-create_user.js",
+          "file": "\\api-testing-pandu\\ts-3-create_user.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-006_harus berhasil create user baru, mengembalikan respon kode 201 dan mendapat pesan \"User berhasil ditambahkan\" ",
+              "fullTitle": "API Create User Tests TC-006_harus berhasil create user baru, mengembalikan respon kode 201 dan mendapat pesan \"User berhasil ditambahkan\" ",
+              "timedOut": false,
+              "duration": 475,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const newUser = {\n  \"name\": \"Pandu\",\n  \"email\": \"panduws345@gmail.com\",\n  \"password\": \"123321saja\"\n};\nconst response = await request.post('/users')\n                              .set('Authorization', `Bearer ${accessToken}`)\n                              .send(newUser);\nexpect(response.status).to.equal(201);\nexpect(response.text).to.include('User berhasil ditambahkan');\nfs.writeFileSync('../tugaspekanan-3-api-automation/Environment/userid.json', JSON.stringify(response.body));",
+              "err": {},
+              "uuid": "68198395-3891-4c54-82bf-a88b700401f3",
+              "parentUUID": "0020c095-4e15-4d30-8d76-9e2d0769ab38",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "68198395-3891-4c54-82bf-a88b700401f3"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 475,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "da2f85b9-e8c2-4554-a7eb-d82b5ae17717",
+          "title": "API Get User Tests",
+          "fullFile": "C:\\Pandu\\Bootcamp QA Automation - Sanbercode\\tugaspekanan-3-api-automation\\api-testing-pandu\\ts-4-get_user_list.js",
+          "file": "\\api-testing-pandu\\ts-4-get_user_list.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-007_harus berhasil mendapatkan list user dan mendapat response 200",
+              "fullTitle": "API Get User Tests TC-007_harus berhasil mendapatkan list user dan mendapat response 200",
+              "timedOut": false,
+              "duration": 1,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "expect(response.status).to.equal(200);",
+              "err": {},
+              "uuid": "ea996e3a-e79e-4b49-a565-90e7a18b5abe",
+              "parentUUID": "da2f85b9-e8c2-4554-a7eb-d82b5ae17717",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-008_harus berhasil mendapatkan response \"success\"",
+              "fullTitle": "API Get User Tests TC-008_harus berhasil mendapatkan response \"success\"",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "expect(response.text).to.include('success');",
+              "err": {},
+              "uuid": "5dee5b5b-417b-4e75-9316-0dfe12d67593",
+              "parentUUID": "da2f85b9-e8c2-4554-a7eb-d82b5ae17717",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ea996e3a-e79e-4b49-a565-90e7a18b5abe",
+            "5dee5b5b-417b-4e75-9316-0dfe12d67593"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "d40aa1bf-1896-4310-91fc-8006fd61403a",
+          "title": "API Update User Tests",
+          "fullFile": "C:\\Pandu\\Bootcamp QA Automation - Sanbercode\\tugaspekanan-3-api-automation\\api-testing-pandu\\ts-5-update_user.js",
+          "file": "\\api-testing-pandu\\ts-5-update_user.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-009_harus berhasil update user dan mendapat response 200",
+              "fullTitle": "API Update User Tests TC-009_harus berhasil update user dan mendapat response 200",
+              "timedOut": false,
+              "duration": 99,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const updateUser = {\n  \"name\": \"Pandu-update\",\n  \"email\": \"panduws345@gmail.com\"\n};\nconst response = await request.put(`/users/${userId}`)\n                              .set('Authorization', `Bearer ${accessToken}`)\n                              .send(updateUser);\n// Pastikan respons adalah 200 OK dan mencakup kata 'success'\nexpect(response.status).to.equal(200);\nexpect(response.text).to.include('success');",
+              "err": {},
+              "uuid": "9fef2d24-e542-48fd-8b8b-8e996e0f0f3f",
+              "parentUUID": "d40aa1bf-1896-4310-91fc-8006fd61403a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9fef2d24-e542-48fd-8b8b-8e996e0f0f3f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 99,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "d68954df-fef7-4bac-a99c-ad3d92ce0036",
+          "title": "API Get User detil Tests",
+          "fullFile": "C:\\Pandu\\Bootcamp QA Automation - Sanbercode\\tugaspekanan-3-api-automation\\api-testing-pandu\\ts-6-get_user_detil.js",
+          "file": "\\api-testing-pandu\\ts-6-get_user_detil.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-010_harus berhasil get user dan mendapat response 200",
+              "fullTitle": "API Get User detil Tests TC-010_harus berhasil get user dan mendapat response 200",
+              "timedOut": false,
+              "duration": 111,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await request.get(`/users/${userId}`)\n                              .set('Authorization', `Bearer ${accessToken}`);\nexpect(response.status).to.equal(200);\nexpect(response.text).to.include('success');",
+              "err": {},
+              "uuid": "b8566d83-cae3-4096-b776-42a348cd54df",
+              "parentUUID": "d68954df-fef7-4bac-a99c-ad3d92ce0036",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b8566d83-cae3-4096-b776-42a348cd54df"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 111,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "5df098ac-9a97-4f76-bd57-3bf9cb7f7dd8",
+          "title": "API Delete User Tests",
+          "fullFile": "C:\\Pandu\\Bootcamp QA Automation - Sanbercode\\tugaspekanan-3-api-automation\\api-testing-pandu\\ts-7-delete_user.js",
+          "file": "\\api-testing-pandu\\ts-7-delete_user.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-011_harus berhasil delete user dan mendapat response 200",
+              "fullTitle": "API Delete User Tests TC-011_harus berhasil delete user dan mendapat response 200",
+              "timedOut": false,
+              "duration": 97,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await request.del(`/users/${userId}`)\n                              .set('Authorization', `Bearer ${accessToken}`);\nexpect(response.status).to.equal(200);\nexpect(response.text).to.include('success');",
+              "err": {},
+              "uuid": "f4541756-aab1-4131-ac81-34dd9308ef89",
+              "parentUUID": "5df098ac-9a97-4f76-bd57-3bf9cb7f7dd8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f4541756-aab1-4131-ac81-34dd9308ef89"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 97,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "8ce528f2-dac5-4120-a46f-0f1c8cb0da12",
+          "title": "API Refresh Token Tests",
+          "fullFile": "C:\\Pandu\\Bootcamp QA Automation - Sanbercode\\tugaspekanan-3-api-automation\\api-testing-pandu\\ts-8-refresh_token.js",
+          "file": "\\api-testing-pandu\\ts-8-refresh_token.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-012_harus berhasil refresh token dan mendapat response 200",
+              "fullTitle": "API Refresh Token Tests TC-012_harus berhasil refresh token dan mendapat response 200",
+              "timedOut": false,
+              "duration": 163,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const refreshData = {\n    \"refreshToken\": refreshToken\n };\nconst response = await request.put(`/authentications`)\n                              .set('Authorization', `Bearer ${accessToken}`)\n                              .send(refreshData);\nexpect(response.status).to.equal(200);\nexpect(response.text).to.include('success');",
+              "err": {},
+              "uuid": "5281156b-1e53-43a1-ab01-704dc6ebfe0e",
+              "parentUUID": "8ce528f2-dac5-4120-a46f-0f1c8cb0da12",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5281156b-1e53-43a1-ab01-704dc6ebfe0e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 163,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "592cb256-c095-4a99-9b78-22708e8e58a8",
+          "title": "API Logout Tests",
+          "fullFile": "C:\\Pandu\\Bootcamp QA Automation - Sanbercode\\tugaspekanan-3-api-automation\\api-testing-pandu\\ts-9-logout.js",
+          "file": "\\api-testing-pandu\\ts-9-logout.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-013_harus berhasil logout dan mendapat response 200",
+              "fullTitle": "API Logout Tests TC-013_harus berhasil logout dan mendapat response 200",
+              "timedOut": false,
+              "duration": 286,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const refreshData = {\n    \"refreshToken\": refreshToken\n };\nconst response = await request.delete(`/authentications`)\n                              .set('Authorization', `Bearer ${accessToken}`)\n                              .send(refreshData);\nexpect(response.status).to.equal(200);\nexpect(response.text).to.include('success');",
+              "err": {},
+              "uuid": "fb0cfaa0-c5f2-488e-a5b8-0f2074a24058",
+              "parentUUID": "592cb256-c095-4a99-9b78-22708e8e58a8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "fb0cfaa0-c5f2-488e-a5b8-0f2074a24058"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 286,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.3.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
